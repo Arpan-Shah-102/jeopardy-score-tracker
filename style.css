@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dancing Script', cursive;
+    user-select: none;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100vh;
+    background: #222;
+}
+h1 {
+    font-size: 3rem;
+    color: #ccc;
+}
+h2 {
+    font-size: 7.5rem;
+    color: #eee;
+    background: linear-gradient(to bottom right, rgb(255, 189, 21), rgb(138, 118, 0));
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 180px;
+    width: 280px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 0 20px;
+
+    &.small {
+        font-size: 5rem;
+    }
+    &.xsmall {
+        font-size: 3rem;
+    }
+    &:hover {
+        background: linear-gradient(to bottom right, rgb(138, 118, 0), rgb(255, 189, 21));
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        scale: 1.05;
+    }
+    &:active {
+        background: linear-gradient(to bottom right, rgb(255, 189, 21), rgb(138, 118, 0));
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        scale: 0.95;
+    }
+}
+div {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    &.big-div {
+        padding: 0 20px;
+        flex-direction: column;
+    }
+
+    & button {
+        font-size: 24px;
+        line-height: 1;
+        font-family: monospace;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+        border-radius: 8px;
+        padding: 5px 10px;
+        cursor: pointer;
+        
+        &.type {
+            height: 40px;
+            width: 40px;
+            padding: 0;
+            font-size: 28px;
+            font-weight: bold;
+
+            &.reset {
+                background: linear-gradient(to bottom right, teal, darkslategray);
+                color: white;
+                border: 1px solid darkslategray;
+
+                &:hover {
+                    background: linear-gradient(to bottom right, darkslategray, teal);
+                    box-shadow: 0 0 5px rgba(21, 87, 36, 0.5);
+                    scale: 1.05;
+                }
+                &:active {
+                    background: linear-gradient(to bottom right, teal, darkslategray);
+                    box-shadow: 0 0 2px rgba(21, 87, 36, 0.3);
+                    scale: 0.95;
+                }
+            }
+            &.add {
+                background: linear-gradient(to bottom right, darkgreen, green);
+                color: white;
+                border: 1px solid green;
+
+                &:hover {
+                    background: linear-gradient(to bottom right, green, darkgreen);
+                    box-shadow: 0 0 5px rgba(21, 87, 36, 0.5);
+                    scale: 1.05;
+                }
+                &:active {
+                    background: linear-gradient(to bottom right, darkgreen, green);
+                    box-shadow: 0 0 2px rgba(21, 87, 36, 0.3);
+                    scale: 0.95;
+                }
+            }
+            &.subtract {
+                background: linear-gradient(to bottom right, #721c24, crimson);
+                color: white;
+                border: 1px solid crimson;
+
+                &:hover {
+                    background: linear-gradient(to bottom right, crimson, #721c24);
+                    box-shadow: 0 0 5px rgba(114, 28, 36, 0.5);
+                    scale: 1.05;
+                }
+                &:active {
+                    background: linear-gradient(to bottom right, #721c24, crimson);
+                    box-shadow: 0 0 2px rgba(114, 28, 36, 0.3);
+                    scale: 0.95;
+                }
+            }
+        }
+        &.num {
+            background: linear-gradient(to bottom right, rgb(0, 77, 128), navy);
+            color: white;
+            border: 1px solid navy;
+
+            &:hover {
+                background: linear-gradient(to bottom right, navy, rgb(0, 77, 128));
+                box-shadow: 0 0 5px rgba(0, 0, 128, 0.5);
+                scale: 1.05;
+            }
+            &:active {
+                background: linear-gradient(to bottom right, rgb(0, 77, 128), navy);
+                box-shadow: 0 0 2px rgba(0, 0, 128, 0.3);
+                scale: 0.95;
+            }
+        }
+        &.selected {
+            border: 2px solid #ccc !important;
+        }
+    }
+}
+
+p {
+    position: fixed;
+    bottom: 20px;
+    transition: all 0.3s ease-in-out;
+
+    &.mute {
+        left: 20px;
+    }
+    &.help {
+        right: 20px;
+    }
+    &:hover {
+        text-shadow: 0px 0px 6px rgba(72, 61, 139, 0.7);
+        scale: 1.1;
+    }
+    &:active {
+        text-shadow: 0px 0px 2px rgba(72, 61, 139, 0.3);
+        scale: 0.9;
+    }
+    & * {
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: monospace;
+        text-decoration: none;
+        text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+        color: rgb(64, 64, 64);
+        cursor: pointer;
+
+    }
+}
