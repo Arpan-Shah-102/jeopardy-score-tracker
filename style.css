@@ -7,13 +7,15 @@
     user-select: none;
 }
 body {
+    background: #222;
+}
+div.main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 50px;
     height: 100vh;
-    background: #222;
 }
 h1 {
     font-size: 3rem;
@@ -147,6 +149,26 @@ div {
         &.selected {
             border: 2px solid #ccc !important;
         }
+    }
+}
+div.history {
+    display: none;
+    flex-direction: column;
+    margin: 20px 20px 100px 20px;
+
+    & h3 {
+        color: white;
+        font-size: 1.5rem;
+
+        &.positive {
+            color: lightgreen;
+        }
+        &.negative {
+            color: lightcoral;
+        }
+    }
+    &.shown {
+        display: flex;
     }
 }
 

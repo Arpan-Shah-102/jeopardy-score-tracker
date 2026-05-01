@@ -20,6 +20,7 @@ const multiplierBtns = [multiplier1x, multiplier10x, multiplier100x, multiplier4
 
 const muteBtn = document.querySelector('.mute');
 const helpBtn = document.querySelector('.help');
+const historyDiv = document.querySelector('.history');
 
 let counter = 0;
 let multiplier = 100;
@@ -31,6 +32,12 @@ function updateCounterDisplay(value) {
     counter += value;
     counterDisplay.textContent = counter;
     playSound(value > 0 ? sfx.increment : sfx.decrement);
+
+    historyDiv.classList.add('shown');
+    const newEntry = document.createElement('h3');
+    newEntry.textContent = (value > 0 ? '+' : '') + value;
+    newEntry.classList.add(value > 0 ? 'positive' : 'negative');
+    historyDiv.prepend(newEntry);
 
     if (counter.toString().length > 4) {
         counterDisplay.classList.add('xsmall');
@@ -121,6 +128,8 @@ counterDisplay.addEventListener('click', () => {
 });
 resetBtn.addEventListener('click', () => {
     updateCounterDisplay(-counter);
+    historyDiv.classList.remove('shown');
+    historyDiv.innerHTML = '';
 });
 
 typeBtns.forEach(btn => {
